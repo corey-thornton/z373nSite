@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Here</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/lavascript.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+</head>
+
+<body>
+
+
+<div class="container">
+    <!-- <button class="toggle" val="true">ON</button> -->
+    <audio id="audio" controls >
+        <source src="audio/Sun_Raise.wav" type="audio/wav">
+        <!-- <source src="horse.mp3" type="audio/mpeg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <div id="mainContent" class="content">
+        <h1 id="typedtext"></h1>
+        <img style="float: left;" src="img/Z37Logo.png" alt="Z373n Logo"  width="300" height="300">
+        <img id="song" style="float: left; border: 5px solid black; filter: drop-shadow(4px 5px 5px #333);" src="img/metro.gif" alt="metro"  width="350" height="250">
+        <nav>
+            <button class="nav" id="button1"></button>
+            <button class="nav"></button>
+            <button class="nav"></button>
+            <button class="nav"></button>
+            <button class="nav"></button>
+        </nav>
+
+    </div>
+</div>
+<audio id="hoverAudio">
+	<source src="audio/Can_We_Ride_The_Metro_Together.mp3"></source>
+	Your browser isn't invited for super fun audio time.
+</audio>
+<canvas style="border: 5px solid black ;" id="canvas1"></canvas>
+
+</body>
+</html>
+
+
+<script>
+    var songElement = $('#song');
+
+    songElement.on('click', function(){      
+        var audio = $("#hoverAudio")[0];
+
+        if(!audio.paused){
+            audio.pause()
+        }else if(audio.paused || audio.currentTime <= audio.duration ){
+             audio.play();
+        }
+    })
+    // songElement.on('mouseenter', function(){      
+    //     var audio = $("#hoverAudio")[0];
+    //     audio.play();
+    // })
+
+    // songElement.on('mouseleave', function(){
+    //     var audio = $("#hoverAudio")[0];
+    //     audio.pause();
+    //     console.log("hey")
+    // })
+
+
+</script>
+<script src="js/typewriter.js"></script>
+<!-- <script src="js/fluid.js"></script> -->
+<script src="js/lavascript.js"></script>
